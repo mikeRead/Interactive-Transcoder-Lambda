@@ -1,0 +1,17 @@
+{
+  "Records":[
+    {
+        "s3":{
+            "bucket":{
+                "name": "lc-media-encode-input"
+            },
+            "object":{
+                "key": "sermon/under-god/grace-and-truth/MessageUnderGodWeek4GraceandTruthMASTER.mp4"
+            }
+        },
+        "Sns": {
+            "Message": "{\"state\":\"COMPLETED\",\"version\":\"2012-09-25\",\"jobId\":\"1479746615667-vzns1i\",\"pipelineId\":\"1477868119625-7ldpmm\",\"input\":{\"key\":\"sermon/under-god/grace-and-truth/MessageUnderGodWeek4GraceandTruthMASTER.mp4\",\"frameRate\":\"auto\",\"resolution\":\"auto\",\"aspectRatio\":\"auto\",\"interlaced\":\"auto\",\"container\":\"auto\"},\"inputCount\":1,\"outputKeyPrefix\":\"sermon/under-god/\",\"outputs\":[{\"id\":\"1\",\"presetId\":\"1471794073458-izgcz1\",\"key\":\"grace-and-truth_1080p.mp4\",\"thumbnailPattern\":\"thumbs-grace-and-truth-{count}\",\"status\":\"Complete\",\"duration\":2501,\"width\":1920,\"height\":1080},{\"id\":\"2\",\"presetId\":\"1471794534841-hu5xxk\",\"key\":\"grace-and-truth_720p.mp4\",\"thumbnailPattern\":\"\",\"status\":\"Complete\",\"duration\":2501,\"width\":1280,\"height\":720},{\"id\":\"3\",\"presetId\":\"1471794724943-9r1vql\",\"key\":\"grace-and-truth_480p.mp4\",\"thumbnailPattern\":\"\",\"status\":\"Complete\",\"duration\":2501,\"width\":854,\"height\":480},{\"id\":\"4\",\"presetId\":\"1471794811175-t76ocy\",\"key\":\"grace-and-truth_360p.mp4\",\"thumbnailPattern\":\"\",\"status\":\"Complete\",\"duration\":2501,\"width\":640,\"height\":360},{\"id\":\"5\",\"presetId\":\"1471794869898-qkmeqz\",\"key\":\"grace-and-truth_240p.mp4\",\"thumbnailPattern\":\"\",\"status\":\"Complete\",\"duration\":2501,\"width\":428,\"height\":240},{\"id\":\"6\",\"presetId\":\"1471794934083-fp4g4o\",\"key\":\"grace-and-truth_144p.mp4\",\"thumbnailPattern\":\"\",\"status\":\"Complete\",\"duration\":2501,\"width\":256,\"height\":144},{\"id\":\"7\",\"presetId\":\"1471795058994-3w6x37\",\"key\":\"grace-and-truth_audio.mp4\",\"thumbnailPattern\":\"\",\"status\":\"Complete\",\"duration\":2501},{\"id\":\"8\",\"presetId\":\"1479330665333-ehhuah\",\"key\":\"grace-and-truth_alexa.mp3\",\"thumbnailPattern\":\"\",\"status\":\"Complete\",\"duration\":2501},{\"id\":\"9\",\"presetId\":\"1479330702611-yyxc97\",\"key\":\"grace-and-truth_128k.mp3\",\"thumbnailPattern\":\"\",\"status\":\"Complete\",\"duration\":2501},{\"id\":\"10\",\"presetId\":\"1479330725159-dycuue\",\"key\":\"grace-and-truth_256k.mp3\",\"thumbnailPattern\":\"\",\"status\":\"Complete\",\"duration\":2501},{\"id\":\"11\",\"presetId\":\"1479330748152-hkbc0x\",\"key\":\"grace-and-truth_320k.mp3\",\"thumbnailPattern\":\"\",\"status\":\"Complete\",\"duration\":2501},{\"id\":\"12\",\"presetId\":\"1479330977771-gz58x4\",\"key\":\"grace-and-truth_128k.mp4\",\"thumbnailPattern\":\"\",\"status\":\"Complete\",\"duration\":2501},{\"id\":\"13\",\"presetId\":\"1479330965547-ort7gq\",\"key\":\"grace-and-truth_256k.mp4\",\"thumbnailPattern\":\"\",\"status\":\"Complete\",\"duration\":2501},{\"id\":\"14\",\"presetId\":\"1479330944481-fqhh4q\",\"key\":\"grace-and-truth_320k.mp4\",\"thumbnailPattern\":\"\",\"status\":\"Complete\",\"duration\":2501}],\"userMetadata\":{\"folder_prefix\":\"sermon/under-god\",\"message_id\":\"262\",\"series_type\":\"sermon\",\"file_prefix\":\"grace-and-truth\",\"series_slug\":\"under-god\",\"series_id\":\"85\"}}"
+        }
+    }
+  ]
+}
