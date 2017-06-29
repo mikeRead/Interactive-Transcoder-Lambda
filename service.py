@@ -119,20 +119,16 @@ def encode_audio(key, file_prefix, folder_prefix, metadata):
 
 def encode_video(key, file_prefix, folder_prefix, metadata):
     outputs = [
-        build_output(file_prefix, 'alexa', 'mp3', '1479330665333-ehhuah', '', False),
-        build_output(file_prefix, '128k', 'mp3', '1479330702611-yyxc97', '', False),
-        build_output(file_prefix, '256k', 'mp3', '1479330725159-dycuue', '', False),
-        build_output(file_prefix, '320k', 'mp3', '1479330748152-hkbc0x', '', False),
-        build_output(file_prefix, '128k', 'mp4', '1479330977771-gz58x4', '', False),
         build_output(file_prefix, '256k', 'mp4', '1479330965547-ort7gq', '', False),
         build_output(file_prefix, '320k', 'mp4', '1479330944481-fqhh4q', '', False),
-        build_output(file_prefix, '1080p', 'mp4', '1484941774976-kji5xi', file_prefix + '-{count}', False),
-        build_output(file_prefix, '720p', 'mp4', '1471794534841-hu5xxk', '', False),
-        build_output(file_prefix, '480p', 'mp4', '1471794724943-9r1vql', '', False),
-        build_output(file_prefix, '360p', 'mp4', '1471794811175-t76ocy', '', False),
-        build_output(file_prefix, '240p', 'mp4', '1471794869898-qkmeqz', '', False),
-        build_output(file_prefix, '144p', 'mp4', '1471794934083-fp4g4o', '', False),
-        build_output(file_prefix, 'audio', 'mp4', '1471795058994-3w6x37', '', False)
+        build_output(file_prefix, '1080p', 'mp4', '1489433239030-cd01rm', '', False),
+        build_output(file_prefix, '720p', 'mp4', '1489433485210-thiysl', '', False),
+        build_output(file_prefix, '480p', 'mp4', '1489433563955-wai8uu', '', False),
+        build_output(file_prefix, '240p', 'mp4', '1489433647465-2kf4oy', '', False),
+        build_output(file_prefix, '144p', 'mp4', '1489433709346-tiygue', '', False),
+        build_output(file_prefix, 'audio', 'mp4', '1479330977771-gz58x4', '', False),
+        build_output(file_prefix, '128k', 'mp3', '1489433862774-necm6v', '', False),
+        build_output(file_prefix, 'alexa', 'mp3', '1489433819959-wmqk6a', '', False)
     ]
 
     logger.info("Cleaning up any older assets...")
@@ -141,32 +137,16 @@ def encode_video(key, file_prefix, folder_prefix, metadata):
     output_prefix = folder_prefix + "/"
     return submit_job('1477868119625-7ldpmm', output_prefix, key, outputs, metadata['attributes'])
 
-def encode_podcast_video(key, file_prefix, folder_prefix, metadata):
+def encode_podcast(key, file_prefix, folder_prefix, metadata):
     outputs = [
-        build_output(file_prefix, '1080p', 'mp4', '1479750076994-izlzu9', '', False),
-        build_output(file_prefix, '720p', 'mp4', '1471794534841-hu5xxk', '', False),
-        build_output(file_prefix, '480p', 'mp4', '1471794724943-9r1vql', '', False),
-        build_output(file_prefix, '360p', 'mp4', '1471794811175-t76ocy', '', False),
-        build_output(file_prefix, '240p', 'mp4', '1471794869898-qkmeqz', '', False),
-        build_output(file_prefix, '144p', 'mp4', '1471794934083-fp4g4o', '', False),
-        build_output(file_prefix, 'audio', 'mp4', '1471795058994-3w6x37', '', False)
-    ]
-
-    logger.info("Cleaning up any older assets...")
-    cleanup_old_outputs(folder_prefix, outputs)
-
-    output_prefix = folder_prefix + "/"
-    return submit_job('1477868119625-7ldpmm', output_prefix, key, outputs, metadata['attributes'])
-
-def encode_podcast_audio(key, file_prefix, folder_prefix, metadata):
-    outputs = [
-        build_output(file_prefix, 'alexa', 'mp3', '1479330665333-ehhuah', '', True),
-        build_output(file_prefix, '128k', 'mp3', '1479330702611-yyxc97', '', True),
-        build_output(file_prefix, '256k', 'mp3', '1479330725159-dycuue', '', True),
-        build_output(file_prefix, '320k', 'mp3', '1479330748152-hkbc0x', '', True),
-        build_output(file_prefix, '128k', 'mp4', '1479330977771-gz58x4', '', True),
-        build_output(file_prefix, '256k', 'mp4', '1479330965547-ort7gq', '', True),
-        build_output(file_prefix, '320k', 'mp4', '1479330944481-fqhh4q', '', True)
+        build_output(file_prefix, '1080p', 'mp4', '1489433239030-cd01rm', '', False),
+        build_output(file_prefix, '720p', 'mp4', '1489433485210-thiysl', '', False),
+        build_output(file_prefix, '480p', 'mp4', '1489433563955-wai8uu', '', False),
+        build_output(file_prefix, '240p', 'mp4', '1489433647465-2kf4oy', '', False),
+        build_output(file_prefix, '144p', 'mp4', '1489433709346-tiygue', '', False),
+        build_output(file_prefix, 'audio', 'mp4', '1479330977771-gz58x4', '', False),
+        build_output(file_prefix, '128k', 'mp3', '1489433862774-necm6v', '', True),
+        build_output(file_prefix, 'alexa', 'mp3', '1489433819959-wmqk6a', '', True)
     ]
 
     logger.info("Cleaning up any older assets...")
@@ -238,11 +218,10 @@ def handler(event, context):
 
         if metadata['attributes']['series_type'] == 'worship':
             job = encode_audio(key, file_prefix, folder_prefix, metadata)
+        elif metadata['attributes']['series_type'] == 'kidsmusic':
+            job = encode_audio(key, file_prefix, folder_prefix, metadata)
         elif metadata['attributes']['series_type'] == 'podcast':
-            if file_extension == 'mp4' or file_extension == 'mov':
-                job = encode_podcast_video(key, file_prefix, folder_prefix, metadata)
-            elif file_extension == 'mp3':
-                job = encode_podcast_audio(key, file_prefix, folder_prefix, metadata)
+            job = encode_podcast(key, file_prefix, folder_prefix, metadata)
 
         else:
             job = encode_video(key, file_prefix, folder_prefix, metadata)
